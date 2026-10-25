@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Rubik Wet Paint", "Onest", system-ui, sans-serif;
+  --font-sans: "Onest", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --color-night-950: #0a0614;
+  --color-night-900: #120a24;
+  --color-night-800: #1b1033;
+  --color-night-700: #2a1850;
+  --color-night-600: #3a2270;
+  --color-pumpkin: #ff7a1a;
+  --color-pumpkin-soft: #ffb347;
+  --color-acid: #b6ff3c;
+  --color-violet: #a67bff;
+  --color-bone: #f6efff;
+  --color-mist: #cfc3ea;
+}
+
+html {
+  background: var(--color-night-950);
+  color-scheme: dark;
+  overflow-x: clip;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  overflow-x: clip;
+  background: var(--color-night-950);
+  color: var(--color-bone);
+  font-family: var(--font-sans);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+section[id] {
+  scroll-margin-top: 3.5rem;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-acid);
+  outline-offset: 3px;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.text-glow-orange {
+  text-shadow: 0 0 18px rgb(255 122 26 / 0.7), 0 0 42px rgb(255 122 26 / 0.35);
+}
+
+.text-glow-acid {
+  text-shadow: 0 0 14px rgb(182 255 60 / 0.55);
+}
+
+.ghost-field {
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+  }
+}
